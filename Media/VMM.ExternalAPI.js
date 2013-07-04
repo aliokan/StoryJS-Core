@@ -1557,7 +1557,7 @@ if(typeof VMM != 'undefined' && typeof VMM.ExternalAPI == 'undefined') {
 			
 			create: function(m) {
 				trace("WEB THUMB CREATE");
-				
+				console.log(m);
 				var thumb_url	= "http://free.pagepeeker.com/v2/thumbs.php?";
 					url			= m.id.replace("http://", "");//.split("/")[0];
 					

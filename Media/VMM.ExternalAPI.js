@@ -1557,7 +1557,7 @@ if(typeof VMM != 'undefined' && typeof VMM.ExternalAPI == 'undefined') {
 			
 			create: function(m) {
 				trace("WEB THUMB CREATE");
-				trace(m);
+
                 if(m.screenshot != null && m.screenshot != "")
                 {
                     // Main Image

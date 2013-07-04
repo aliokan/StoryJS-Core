@@ -106,7 +106,7 @@ if(typeof VMM != 'undefined' && typeof VMM.MediaElement == 'undefined') {
 			
 			if (data.media != null && data.media != "") {
 				var mediaElem = "", captionElem = "", creditElem = "", _id = "", isTextMedia = false, m;
-				
+				trace(data.media);
 				m = VMM.MediaType(data.media); //returns an object with .type and .id
 				m.uid = uid;
 				_valid = true;

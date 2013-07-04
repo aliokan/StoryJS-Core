@@ -1557,15 +1557,25 @@ if(typeof VMM != 'undefined' && typeof VMM.ExternalAPI == 'undefined') {
 			
 			create: function(m) {
 				trace("WEB THUMB CREATE");
-				console.log(m);
-				var thumb_url	= "http://free.pagepeeker.com/v2/thumbs.php?";
-					url			= m.id.replace("http://", "");//.split("/")[0];
-					
-				// Main Image
-				VMM.attachElement("#" + m.uid, "<a href='" + m.id + "' target='_blank'><img src='" + thumb_url + "size=x&url=" + url + "'></a>");
-				
-				// Thumb
-				VMM.attachElement("#" + m.uid + "_thumb", "<img src='" + thumb_url + "size=t&url=" + url + "'>");
+				trace(m);
+                if(m.screenshot != null && m.screenshot != "")
+                {
+                    // Main Image
+                    VMM.attachElement("#" + m.uid, "<a href='" + m.id + "' target='_blank'><img src='" + m.screenshot + "'></a>");
+                    
+                    // Thumb
+                    VMM.attachElement("#" + m.uid + "_thumb", "<img src='" + m.screenshot + "'>");
+                } else
+                {
+                    var thumb_url	= "http://free.pagepeeker.com/v2/thumbs.php?";
+                        url			= m.id.replace("http://", "");//.split("/")[0];
+                        
+                    // Main Image
+                    VMM.attachElement("#" + m.uid, "<a href='" + m.id + "' target='_blank'><img src='" + thumb_url + "size=x&url=" + url + "'></a>");
+                    
+                    // Thumb
+                    VMM.attachElement("#" + m.uid + "_thumb", "<img src='" + thumb_url + "size=t&url=" + url + "'>");
+                }
 			},
 			
 			pushQue: function() {

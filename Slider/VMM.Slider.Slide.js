@@ -132,6 +132,14 @@ if (typeof VMM.Slider != 'undefined') {
 			
 			buildSlide();
 			
+            // Assign appropriate colors to slide-tags
+			$("span.slide-tag:contains('Démocratie & Citoyenneté')").addClass('slide-tag-democratie');
+			$("span.slide-tag:contains('Femmes')").addClass('slide-tag-femmes');
+			$("span.slide-tag:contains('Monde')").addClass('slide-tag-monde');
+            $("span.slide-tag:contains('Territoires')").addClass('slide-tag-territoires');
+			$("span.slide-tag:contains('Gouvernance économique')").addClass('slide-tag-gouvernance');
+			$("span.slide-tag:contains('Europe sociale')").addClass('slide-tag-europe');
+			
 			clearTimeout(timer.pushque);
 			clearTimeout(timer.render);
 			timer.pushque = setTimeout(VMM.ExternalAPI.pushQues, times.pushque);
